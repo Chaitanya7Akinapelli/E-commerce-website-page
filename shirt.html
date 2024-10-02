@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Card with Thumbnails</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="card">
+    <!-- Left Panel: Image Viewer -->
+    <div class="left-panel">
+      <!-- Main Product Image -->
+      <img id="productImage" src="Assets/mens-shirt/shirt-1.jpeg" alt="Product Image" onclick="openModal(this.src)">
+      
+      <!-- Thumbnails for different angles -->
+      <div class="thumbnail-container">
+        <img src="Assets/mens-shirt/shirt-1.jpeg" alt="Angle 1" onclick="changeImage(this.src)">
+        <img src="Assets/mens-shirt/shirt-2.jpeg" alt="Angle 2" onclick="changeImage(this.src)">
+        <img src="Assets/mens-shirt/shirt-3.jpeg" alt="Angle 3" onclick="changeImage(this.src)">
+        <img src="Assets/mens-shirt/shirt-4.jpeg" alt="Angle 4" onclick="changeImage(this.src)">
+      </div>
+    </div>
+
+    <!-- Right Panel: Product Details and Add to Cart -->
+    <div class="right-panel">
+      <div class="product-details">
+        <h3 class="company-name">Foomer Company</h3>
+        <h1 class="product-name">Shirts</h1>
+        <h4 class="discription">This shirt is your perfect casual wear companion.</h4>
+        <div class="product-price">
+            <div class="calculation">
+                <div class="final-price">$125.00</div>
+                <div class="discount">50%</div>
+            </div>
+            <div class="actual-price">$250.00</div>
+        </div>
+      </div>
+
+      <!-- Quantity Selector and Add to Cart Button -->
+      <div class="quantity-cart-container">
+        <div class="quantity-selector">
+          <button onclick="decreaseQuantity()">-</button>
+          <span id="quantity">1</span>
+          <button onclick="increaseQuantity()">+</button>
+        </div>
+        <button class="add-to-cart" onclick="addToCart('foomer-company', 'Shirts', 125.00, 'Assets/mens-shirt/shirt-1.jpeg')">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+  <!-- Link to the external JS file -->
+  <script src="script2.js"></script>
+</body>
+</html>

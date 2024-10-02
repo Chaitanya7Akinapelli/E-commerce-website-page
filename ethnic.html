@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Card with Thumbnails</title>
+  <script src="script2.js" defer></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="card">
+    <!-- Left Panel: Image Viewer -->
+    <div class="left-panel">
+      <img id="productImage" src="Assets/women-ethnicWear/ethnic-wear1.webp" alt="Product Image">
+      
+      <!-- Thumbnails for different angles -->
+      <div class="thumbnail-container">
+        <img src="Assets/women-ethnicWear/ethnic-wear1.webp" alt="Angle 1" onclick="changeImage(this.src)">
+        <img src="Assets/women-ethnicWear/ethnic-wear2.jpeg" alt="Angle 2" onclick="changeImage(this.src)">
+        <img src="Assets/women-ethnicWear/ethnic-wear3.jpeg" alt="Angle 3" onclick="changeImage(this.src)">
+        <img src="Assets/women-ethnicWear/ethnic-wear4.jpeg" alt="Angle 4" onclick="changeImage(this.src)">
+      </div>
+    </div>
+
+    <!-- Right Panel: Product Details and Add to Cart -->
+    <div class="right-panel">
+      <div class="product-details">
+        <h3 class="company-name">Libas</h3>
+  
+        <h1 class="product-name">Women Ethnic wear</h1>
+    
+        <h4 class="discription">These low-profile sneakers are your perfect casual wear companion. Featuring a 
+        durable rubber outer sole, they'll withstand everything the weather can offer.</h4>
+        <div class="product-price">
+            <div  class="calculation">
+                <div class="final-price">$125.00</div>
+                <div class="discount">50%</div>
+            </div>
+            <div class="actual-price">$250.00</div>
+        </div>
+      </div>
+
+      <!-- Quantity Selector and Add to Cart Button -->
+      <div class="quantity-cart-container">
+        <div class="quantity-selector">
+          <button onclick="decreaseQuantity()">-</button>
+          <span id="quantity">1</span>
+          <button onclick="increaseQuantity()">+</button>
+        </div>
+        <!-- Pass the product details to the addToCart function -->
+        <button class="add-to-cart" onclick="addToCart('ethnic-wear', 'women-ethnicWear', 125.00, 'Assets/women-ethnicWear/ethnic-wear1.webp')">Add to Cart</button>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
